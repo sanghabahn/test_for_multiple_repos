@@ -1,3 +1,5 @@
+# Modified calculated_recall function : Add debug / log fuctionality (2021.11.11, SangHa Bahn)
+
 import csv
 import torch
 from sklearn.metrics import accuracy_score, precision_score, recall_score, classification_report, confusion_matrix
@@ -156,7 +158,7 @@ def calculate_precision(outputs, targets):
 
 
 def calculate_recall(outputs, targets):
-
+    print("A")
     _, pred = outputs.topk(1, 1, True)
     pred = pred.t()
     return  recall_score(targets.view(-1), pred.view(-1), average = 'macro')
