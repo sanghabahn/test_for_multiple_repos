@@ -4,6 +4,7 @@ import time
 import os
 import sys
 
+# TODO: importing all is not a good way to write code
 from utils import *
 
 
